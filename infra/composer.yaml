@@ -1,0 +1,13 @@
+services:
+  db:
+    image: mysql@8.0.35-debian
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: local_password
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8000:8080
